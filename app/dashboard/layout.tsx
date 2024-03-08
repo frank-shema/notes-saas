@@ -52,6 +52,7 @@ async function getData({
       },
       data: {
         stripeCustomerId: data.id,
+        
       },
     });
   }
@@ -67,7 +68,7 @@ export default async function DashboardLayout({
   if (!user) {
     return redirect("/");
   }
-  await getData({
+  await getData({ 
     email: user.email as string,
     firstName: user.given_name as string,
     id: user.id as string,
